@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "458304378824",
+    "project_id": "dhakdol-e76ac",
+    "storage_bucket": "dhakdol-e76ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458304378824:android:91c6585eee1d28b32892fd",
+        "android_client_info": {
+          "package_name": "com.baddest.music"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458304378824-c9rh3l9lkfajisbm86aaskacmhldhsu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE9zORjS3zhBclAydaRSIiwfvFSlXWBQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458304378824-4uoaui9m0nnr8j9tdt78bh33mbtc777f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "458304378824-eo4rs0m4r224lt96ofvt134tj5t6q8ic.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dhakDhol"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458304378824:android:1ceecf39ab5c69682892fd",
+        "android_client_info": {
+          "package_name": "com.dhak.dhol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458304378824-5fh7adibvr0sj00ca4mfv7c6ggvv5p7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhak.dhol",
+            "certificate_hash": "c5ccc6c78c0dc696e08b72bcb577c7952b97df82"
+          }
+        },
+        {
+          "client_id": "458304378824-6pa8jeedpj15q4rh87sc04i0pi1cg45e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhak.dhol",
+            "certificate_hash": "985574eaccf90b0d980939626172a6bba4e3b0ae"
+          }
+        },
+        {
+          "client_id": "458304378824-doppnnk6k74cs4vbu7fes2e9g9kj7eao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhak.dhol",
+            "certificate_hash": "b0f26fb2522cd893eec528819c82d487a6560d45"
+          }
+        },
+        {
+          "client_id": "458304378824-c9rh3l9lkfajisbm86aaskacmhldhsu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE9zORjS3zhBclAydaRSIiwfvFSlXWBQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458304378824-4uoaui9m0nnr8j9tdt78bh33mbtc777f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "458304378824-eo4rs0m4r224lt96ofvt134tj5t6q8ic.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dhakDhol"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

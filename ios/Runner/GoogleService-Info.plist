@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>458304378824-o75e1nb4sjh6hch9g9big82f3puaa84b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.458304378824-o75e1nb4sjh6hch9g9big82f3puaa84b</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>458304378824-doppnnk6k74cs4vbu7fes2e9g9kj7eao.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBbZwmhX2migtdFLzT0_Tc8c-o-UmlkK48</string>
+	<key>GCM_SENDER_ID</key>
+	<string>458304378824</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.baddest.music</string>
+	<key>PROJECT_ID</key>
+	<string>dhakdol-e76ac</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dhakdol-e76ac.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:458304378824:ios:343c07692e2127d02892fd</string>
+</dict>
+</plist>
