@@ -1,8 +1,6 @@
 import 'package:dhak_dhol/data/Repository/repositor.dart';
 import 'package:dhak_dhol/data/model/media_model.dart';
 import 'package:dhak_dhol/data/model/moods_model.dart';
-import 'package:dhak_dhol/utils/shared_pref.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -45,9 +43,7 @@ class MoodsMediaProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-
   Future<void> fetchItems() async {
-
     final response = await repository.fetchMoodsMedia(page);
 
     if (response?.isNotEmpty == true) {

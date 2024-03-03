@@ -15,7 +15,6 @@ import 'package:provider/provider.dart';
 import '../../../provider/media_player_model.dart';
 import '../../../provider/music/audio_provider.dart';
 import '../../../widgets/popup_menu.dart';
-import 'music_opinion_screen.dart';
 
 class MusicPlayerPage extends StatefulWidget {
   const MusicPlayerPage({Key? key, this.playMusic}) : super(key: key);
@@ -451,7 +450,8 @@ class ControlButton extends StatelessWidget {
               final playerState = snapshot.data;
               final processingState = playerState?.processingState;
               final playing = playerState?.playing;
-              if (processingState == ProcessingState.loading || processingState == ProcessingState.buffering) {
+              if (processingState == ProcessingState.loading ||
+                  processingState == ProcessingState.buffering) {
                 return Container(
                   margin: const EdgeInsets.all(8.0),
                   width: 64.0,

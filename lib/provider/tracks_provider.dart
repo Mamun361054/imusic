@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../utils/shared_pref.dart';
 
-
 class TracksProvider extends ChangeNotifier {
   bool isError = false;
   List<Media> mediaList = [];
-  RefreshController refreshController = RefreshController(initialRefresh: false);
+  RefreshController refreshController =
+      RefreshController(initialRefresh: false);
   int page = 1;
   Repository repository = Repository();
 
@@ -40,9 +40,9 @@ class TracksProvider extends ChangeNotifier {
 
   Future<void> fetchItems() async {
     try {
-
       final userData = await SharedPref.getValue(SharedPref.keyEmail);
 
+      // ignore: unused_local_variable
       FormData data = FormData.fromMap({
         "email": userData ?? "null",
         "media_type": "audio",

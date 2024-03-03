@@ -6,9 +6,6 @@ import 'package:dhak_dhol/data/model/user_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import '../model/firebase_model/message.dart';
-import '../model/firebase_model/message.dart';
-
 QuerySnapshot? opinionSnapshot;
 
 class FirebaseService {
@@ -76,6 +73,7 @@ class FirebaseService {
         .doc('$fromId')
         .collection('$toId')
         .add(chatMap)
+        // ignore: body_might_complete_normally_catch_error
         .catchError((e) {
       if (kDebugMode) {
         print(e.toString());

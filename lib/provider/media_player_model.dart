@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:async';
@@ -64,6 +63,7 @@ class MediaPlayerModel with ChangeNotifier {
   }
 
   Future<void> likePost(songId) async {
+    // ignore: unused_local_variable
     final email = await SharedPref.getValue(SharedPref.keyEmail);
     final id = await SharedPref.getValue(SharedPref.keyId);
 

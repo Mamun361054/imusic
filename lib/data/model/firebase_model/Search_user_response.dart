@@ -4,8 +4,6 @@
 
 import 'dart:convert';
 
-import '../artist_model.dart';
-
 SearchUserResponse searchUserResponseFromJson(String str) =>
     SearchUserResponse.fromJson(json.decode(str));
 

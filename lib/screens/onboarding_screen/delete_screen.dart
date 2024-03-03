@@ -1,5 +1,3 @@
-import 'package:dhak_dhol/screens/auth/sign_in/sign_in_screen.dart';
-import 'package:dhak_dhol/screens/auth/sign_up.dart/sign_up_screen.dart';
 import 'package:dhak_dhol/utils/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../home/bottom_navigation_bar/bottom_navigation_bar.dart';
 
 class DeleteScreen extends StatelessWidget {
-
   const DeleteScreen({Key? key}) : super(key: key);
 
   @override
@@ -18,12 +15,14 @@ class DeleteScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             const SizedBox(
               height: 100.0,
             ),
             Center(
-              child: Image.asset('assets/images/app_logo.png',scale: 2,),
+              child: Image.asset(
+                'assets/images/app_logo.png',
+                scale: 2,
+              ),
             ),
             Text('Music + Fun + Meetup',
                 style: GoogleFonts.manrope(
@@ -34,7 +33,7 @@ class DeleteScreen extends StatelessWidget {
               height: 50,
             ),
             Container(
-              padding:  const EdgeInsets.symmetric(vertical: 5, horizontal: 18),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 18),
               width: MediaQuery.of(context).size.width,
               height: ScreenUtil.defaultSize.height,
               decoration: BoxDecoration(
@@ -46,41 +45,44 @@ class DeleteScreen extends StatelessWidget {
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children:  [
-                    const SizedBox(
+                children: [
+                  const SizedBox(
                     height: 25.0,
                   ),
-                  const  Text("Your account deleted. Hope you will join again", style: TextStyle(color:Colors.white , fontSize: 16),),
-
-                  const  SizedBox(
+                  const Text(
+                    "Your account deleted. Hope you will join again",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  const SizedBox(
                     height: 55,
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const BottomNavigationScreen()), (Route<dynamic> route) => false);
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const BottomNavigationScreen()),
+                          (Route<dynamic> route) => false);
                     },
                     child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 30),
                       decoration: BoxDecoration(
                           color: AppColor.buttonColor,
-                          borderRadius: BorderRadius.circular(20)
-                      ),
+                          borderRadius: BorderRadius.circular(20)),
                       child: Text(
                         'Back to home',
                         style: GoogleFonts.manrope(
-                            color: Colors.black,
-                            fontSize: 16),
+                            color: Colors.black, fontSize: 16),
                       ),
                     ),
                   ),
-                  const  SizedBox(
+                  const SizedBox(
                     height: 45.0,
                   ),
                 ],
               ),
             ),
-
-
 
             // Positioned(
             //   bottom: 0,
@@ -185,7 +187,6 @@ class DeleteScreen extends StatelessWidget {
             //   ),
             // ),
             //
-
           ],
         ),
       ),

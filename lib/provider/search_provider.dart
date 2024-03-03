@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:dhak_dhol/data/model/media_model.dart';
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
 import '../data/Repository/repositor.dart';
 import '../data/model/search_model.dart';
 import '../utils/shared_pref.dart';
@@ -33,11 +32,10 @@ class SearchProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateFilterViewIndex({required int index}){
+  void updateFilterViewIndex({required int index}) {
     filterIndex = index;
     notifyListeners();
   }
-
 }
 
 class Debounce {

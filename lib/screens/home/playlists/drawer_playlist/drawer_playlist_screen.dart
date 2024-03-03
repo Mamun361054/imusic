@@ -113,7 +113,7 @@ class _DrawerPlaylistScreenState extends State<DrawerPlaylistScreen> {
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
-                            .headline5!
+                            .headlineSmall!
                             .copyWith(color: Colors.white)),
                   ),
                 ),

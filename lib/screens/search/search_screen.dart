@@ -3,7 +3,6 @@ import 'package:dhak_dhol/provider/search_provider.dart';
 import 'package:dhak_dhol/screens/search/search_content.dart';
 import 'package:dhak_dhol/utils/app_const.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -14,7 +13,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -62,7 +60,8 @@ class _SearchScreenState extends State<SearchScreen> {
                               TextStyle(color: Colors.white.withOpacity(.4)),
                           suffixIcon: IconButton(
                               onPressed: () {
-                                provider.searchMedia(provider.searchController.text);
+                                provider.searchMedia(
+                                    provider.searchController.text);
                               },
                               icon: Icon(
                                 Icons.send,
@@ -82,17 +81,27 @@ class _SearchScreenState extends State<SearchScreen> {
                         crossAxisSpacing: 16.0),
                     itemCount: 6,
                     itemBuilder: (context, index) {
-
                       final item = searchItems[index];
 
                       return ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: provider.filterIndex == index ? AppColor.inputBackgroundColor: AppColor.filterItemColor,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0))),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: provider.filterIndex == index
+                                  ? AppColor.inputBackgroundColor
+                                  : AppColor.filterItemColor,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(24.0))),
                           onPressed: () {
                             provider.updateFilterViewIndex(index: index);
-                          }, child: Row(
+                          },
+                          child: Row(
                             children: [
-                              Icon(item.icon,size: 20.0,),
-                              SizedBox(width: 4.0,),
+                              Icon(
+                                item.icon,
+                                size: 20.0,
+                              ),
+                              SizedBox(
+                                width: 4.0,
+                              ),
                               Text('${item.title}'),
                             ],
                           ));
@@ -112,7 +121,10 @@ class _SearchScreenState extends State<SearchScreen> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: SearchContent(viewIndex: provider.filterIndex, searchModel: provider.searchModel,),
+                    child: SearchContent(
+                      viewIndex: provider.filterIndex,
+                      searchModel: provider.searchModel,
+                    ),
                   ),
                 ),
               ],

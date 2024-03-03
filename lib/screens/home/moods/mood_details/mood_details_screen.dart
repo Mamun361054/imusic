@@ -2,14 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dhak_dhol/data/model/moods_model.dart';
 import 'package:dhak_dhol/provider/moods_provider.dart';
 import 'package:dhak_dhol/screens/home/moods/moods_content.dart';
-import 'package:dhak_dhol/screens/home/music_player_page/music_player_page.dart';
 import 'package:dhak_dhol/utils/app_const.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
-import '../../../../provider/music/audio_provider.dart';
 import '../../music_player_page/audio_player_new_page.dart';
 
 class MoodDetailsScreen extends StatelessWidget {
@@ -21,13 +18,16 @@ class MoodDetailsScreen extends StatelessWidget {
       create: (BuildContext context) => MoodsProvider(),
       child: Scaffold(
         backgroundColor: AppColor.deepBlue,
-        appBar: AppBar(title: const Text("All Moods"), backgroundColor: AppColor.deepBlue,),
+        appBar: AppBar(
+          title: const Text("All Moods"),
+          backgroundColor: AppColor.deepBlue,
+        ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: Column(
-              children: const[
-                 Expanded(child: MoodsListWidget()),
+              children: const [
+                Expanded(child: MoodsListWidget()),
               ],
             ),
           ),
@@ -90,8 +90,8 @@ class _MoodsListWidgetState extends State<MoodsListWidget> {
         padding: const EdgeInsets.only(left: 8.0),
         crossAxisCount: 3,
         childAspectRatio: 1,
-        children: provider.moodsList.map((e) => MoodsContent(moods: e))
-            .toList(),
+        children:
+            provider.moodsList.map((e) => MoodsContent(moods: e)).toList(),
       ),
     );
   }
@@ -187,4 +187,3 @@ class MoodListContent extends StatelessWidget {
     );
   }
 }
-

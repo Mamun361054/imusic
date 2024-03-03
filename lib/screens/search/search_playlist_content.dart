@@ -1,12 +1,11 @@
-import 'package:dhak_dhol/data/model/media_model.dart';
-import 'package:dhak_dhol/data/model/playlist_model.dart';
 import 'package:flutter/material.dart';
 import '../../model/search_playlist.dart';
 import '../home/playlists/playlists_content.dart';
 
 class SearchPlaylistContent extends StatelessWidget {
   final List<SearchPlayList> playlists;
-  const SearchPlaylistContent({Key? key,required this.playlists}) : super(key: key);
+  const SearchPlaylistContent({Key? key, required this.playlists})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,9 @@ class SearchPlaylistContent extends StatelessWidget {
         itemCount: playlists.length,
         itemBuilder: (BuildContext ctx, index) {
           final playlist = playlists[index];
-          return PlaylistsContent(searchPlayList: playlist,);
+          return PlaylistsContent(
+            searchPlayList: playlist,
+          );
         });
   }
 }

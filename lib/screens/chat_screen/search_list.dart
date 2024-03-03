@@ -94,6 +94,7 @@ class _SearchFriendState extends State<SearchFriend> {
                                 ),
                                 trailing: InkWell(
                                   onTap: () {
+                                    // ignore: unused_local_variable
                                     ChatProfileSearch? searchProfile =
                                         profiles[index];
 

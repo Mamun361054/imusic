@@ -1,5 +1,4 @@
 import 'package:dhak_dhol/data/model/artist_model.dart';
-import 'package:dhak_dhol/data/model/playlist_model.dart';
 import 'package:dhak_dhol/data/model/user_model.dart';
 import '../../model/search_playlist.dart';
 import 'album_model.dart';
@@ -50,8 +49,7 @@ class SearchModel {
       users: json['Users'] != null
           ? json["Users"] == null
               ? []
-              : List<User>.from(
-                  json["Users"]!.map((x) => User.fromJson(x)))
+              : List<User>.from(json["Users"]!.map((x) => User.fromJson(x)))
           : [],
       genres: json['Genres'] != null
           ? json["Genres"] == null

@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dhak_dhol/data/model/media_model.dart';
-import 'package:dhak_dhol/screens/search/search_content.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +8,6 @@ import '../../provider/search_provider.dart';
 import '../home/music_player_page/audio_player_new_page.dart';
 
 class SearchMediaScreen extends StatefulWidget {
-
   const SearchMediaScreen({Key? key}) : super(key: key);
 
   @override
@@ -17,56 +15,55 @@ class SearchMediaScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchMediaScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Consumer<SearchProvider>(
       builder: (BuildContext context, provider, _) {
         return provider.searchModel == null
             ? Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Lottie.asset(
-                    "assets/images/music_not_found_one.json",
-                    height: 150.0,
-                    width: 150.0),
-                Text(
-                  "Try Again Later",
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w500),
-                ),
-              ],
-            )) : provider.searchModel!.musics.isNotEmpty  ? ListView.builder(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          itemCount: provider.searchModel?.musics.length,
-          itemBuilder: (context, index) {
-            return SearchMusicContent(
-              selectMusic: provider.searchModel?.musics.elementAt(index),
-              mediaList: provider.searchModel?.musics,
-              index: index,
-            );
-          },
-        ) : Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Lottie.asset(
-                    "assets/images/music_not_found_one.json",
-                    height: 150.0,
-                    width: 150.0),
-                Text(
-                  "No Music Found",
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w500),
-                ),
-              ],
-            ));
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Lottie.asset("assets/images/music_not_found_one.json",
+                      height: 150.0, width: 150.0),
+                  Text(
+                    "Try Again Later",
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ))
+            : provider.searchModel!.musics.isNotEmpty
+                ? ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: provider.searchModel?.musics.length,
+                    itemBuilder: (context, index) {
+                      return SearchMusicContent(
+                        selectMusic:
+                            provider.searchModel?.musics.elementAt(index),
+                        mediaList: provider.searchModel?.musics,
+                        index: index,
+                      );
+                    },
+                  )
+                : Center(
+                    child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Lottie.asset("assets/images/music_not_found_one.json",
+                          height: 150.0, width: 150.0),
+                      Text(
+                        "No Music Found",
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ));
       },
     );
   }
@@ -76,13 +73,16 @@ class SearchMusicContent extends StatelessWidget {
   final Media? selectMusic;
   final List<Media>? mediaList;
   final int? index;
-  const SearchMusicContent({Key? key, this.selectMusic, this.mediaList, this.index}) : super(key: key);
+  const SearchMusicContent(
+      {Key? key, this.selectMusic, this.mediaList, this.index})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Provider.of<AudioProvider>(context, listen: false).preparePlaylist(mediaList!, selectMusic!,index);
+        Provider.of<AudioProvider>(context, listen: false)
+            .preparePlaylist(mediaList!, selectMusic!, index);
         Navigator.of(context).pushNamed(AudioPlayerNewPage.routeName);
       },
       child: Padding(

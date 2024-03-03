@@ -1,5 +1,4 @@
 import 'package:dhak_dhol/provider/genre_provider.dart';
-import 'package:dhak_dhol/screens/search/search_content.dart';
 import 'package:dhak_dhol/utils/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +23,8 @@ class _GenreScreenState extends State<GenreHomeScreen> {
         builder: (BuildContext context, provider, _) {
           return Scaffold(
             backgroundColor: AppColor.deepBlue,
-            appBar: const PreferredSize(preferredSize: Size.fromHeight(55.0), child: CustomAppBar()),
+            appBar: const PreferredSize(
+                preferredSize: Size.fromHeight(55.0), child: CustomAppBar()),
             drawer: const AppDrawer(),
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0),

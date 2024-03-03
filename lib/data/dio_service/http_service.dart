@@ -21,6 +21,7 @@ class HttpServiceImpl {
           options: Options(
               headers: {HttpHeaders.authorizationHeader: 'Bearer $token'}));
       debugPrint('response $response');
+      // ignore: deprecated_member_use
     } on DioError catch (e) {
       debugPrint(e.message.toString());
       throw Exception(e.message);
@@ -41,7 +42,7 @@ class HttpServiceImpl {
           options: Options(
               headers: {HttpHeaders.authorizationHeader: 'Bearer $token'}));
       debugPrint('Post postRequest ${response.data}');
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       errorMessage = DioExceptions.fromDioError(e).toString();
       debugPrint(errorMessage.toString());
       throw Exception(e.error);
@@ -59,7 +60,7 @@ class HttpServiceImpl {
           options: Options(
               headers: {HttpHeaders.authorizationHeader: 'Bearer $token'}));
       debugPrint('response $response');
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       debugPrint(e.message.toString());
       throw Exception(e.message);
     }

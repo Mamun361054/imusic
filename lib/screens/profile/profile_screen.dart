@@ -21,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
       create: (BuildContext context) => ProfileProvider(),
       child: Consumer<ProfileProvider>(
         builder: (BuildContext context, provider, _) {
-
+          // ignore: unused_local_variable
           final profileData = provider.profile;
 
           return Scaffold(

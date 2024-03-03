@@ -17,12 +17,14 @@ class SongCategoryContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     MusicProvider provider = Provider.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Provider.of<AudioProvider>(context, listen: false).preparePlaylist(mediaList!, selectMusic!,index);
+          Provider.of<AudioProvider>(context, listen: false)
+              .preparePlaylist(mediaList!, selectMusic!, index);
           Navigator.of(context).pushNamed(AudioPlayerNewPage.routeName);
         },
         child: Column(
@@ -37,11 +39,12 @@ class SongCategoryContent extends StatelessWidget {
                     width: 60,
                     fit: BoxFit.cover,
                     imageUrl: "${selectMusic?.coverPhoto}",
-                    progressIndicatorBuilder: (context, url, downloadProgress) =>
-                        Center(
+                    progressIndicatorBuilder:
+                        (context, url, downloadProgress) => Center(
                             child: CircularProgressIndicator(
                                 value: downloadProgress.progress)),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
                 ),
                 Expanded(

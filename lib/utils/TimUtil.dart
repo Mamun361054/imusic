@@ -70,7 +70,7 @@ class TimUtil {
     }
   }
 
-  static Duration getTimeDifferenceDuration({required int timestamp}){
+  static Duration getTimeDifferenceDuration({required int timestamp}) {
     DateTime date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
     final date2 = DateTime.now();
     return date2.difference(date);
@@ -108,6 +108,7 @@ class TimUtil {
   }
 
   static String stringForSeconds(double seconds) {
+    // ignore: unnecessary_null_comparison
     if (seconds == null || seconds == 0) return "00:00";
     return '${(seconds ~/ 60)}:${(seconds.truncate() % 60).toString().padLeft(2, '0')}';
   }

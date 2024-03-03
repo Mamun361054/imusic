@@ -6,7 +6,6 @@ import 'package:dhak_dhol/data/model/firebase_model/message.dart';
 import 'package:dhak_dhol/screens/image_preview_screen.dart';
 import 'package:dhak_dhol/utils/app_const.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -26,11 +25,13 @@ class _ChatLineState extends State<ChatLine> {
   Widget build(BuildContext context) {
     if (widget.currentUser == widget.message?.from) {
       return Padding(
-        padding: const EdgeInsets.only(bottom:8.0),
+        padding: const EdgeInsets.only(bottom: 8.0),
         child: Row(
           textDirection: TextDirection.rtl,
           children: <Widget>[
-            SizedBox(width: 16.0,),
+            SizedBox(
+              width: 16.0,
+            ),
             widget.message?.type == 'call' ||
                     widget.message?.type == 'call_end' ||
                     widget.message?.type == 'audio_call'
@@ -53,7 +54,8 @@ class _ChatLineState extends State<ChatLine> {
                       ],
                     ),
                   )
-                : widget.message?.type == 'image' ? Container(
+                : widget.message?.type == 'image'
+                    ? Container(
                         margin: const EdgeInsets.symmetric(vertical: 15.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10.0),
@@ -85,7 +87,8 @@ class _ChatLineState extends State<ChatLine> {
                             ),
                           ),
                         ),
-                      ) : widget.message?.message.length < 30
+                      )
+                    : widget.message?.message.length < 30
                         ? Container(
                             padding: const EdgeInsets.all(8.0),
                             margin: const EdgeInsets.only(left: 8),
@@ -95,9 +98,8 @@ class _ChatLineState extends State<ChatLine> {
                             ),
                             child: Text('${widget.message?.message}',
                                 style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                )),
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
                           )
                         : Expanded(
                             child: Container(
@@ -118,10 +120,12 @@ class _ChatLineState extends State<ChatLine> {
       );
     } else {
       return Padding(
-        padding: const EdgeInsets.only(bottom:8.0),
+        padding: const EdgeInsets.only(bottom: 8.0),
         child: Row(
           children: <Widget>[
-            SizedBox(width: 16.0,),
+            SizedBox(
+              width: 16.0,
+            ),
             widget.message?.type == 'call' ||
                     widget.message?.type == 'call_end' ||
                     widget.message?.type == 'audio_call'
@@ -178,9 +182,8 @@ class _ChatLineState extends State<ChatLine> {
                             ),
                             child: Text('${widget.message?.message}',
                                 style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                )),
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
                           )
                         : Expanded(
                             child: Container(
@@ -195,8 +198,8 @@ class _ChatLineState extends State<ChatLine> {
                               ),
                               child: Text(
                                 '${widget.message?.message}',
-                                style:
-                                    const TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),

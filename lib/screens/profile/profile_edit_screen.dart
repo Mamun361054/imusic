@@ -9,8 +9,6 @@ import '../../data/model/artist_model.dart';
 import '../../data/model/update_profile.dart';
 import '../../provider/profile_provider.dart';
 import '../../utils/app_const.dart';
-import '../../utils/shared_pref.dart';
-import '../onboarding_screen/onboarding_screen.dart';
 import '../search/search_screen.dart';
 
 class ProfileEditScreen extends StatefulWidget {
@@ -348,7 +346,8 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                     )),
               )
             : Padding(
-                padding: EdgeInsets.only(top: ScreenUtil.defaultSize.height / 2),
+                padding:
+                    EdgeInsets.only(top: ScreenUtil.defaultSize.height / 2),
                 child: const CircularProgressIndicator(),
               ),
       ),

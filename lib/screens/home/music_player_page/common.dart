@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:dhak_dhol/utils/app_const.dart';
 import 'package:flutter/material.dart';
 
 class SeekBar extends StatefulWidget {
@@ -11,7 +10,7 @@ class SeekBar extends StatefulWidget {
   final ValueChanged<Duration>? onChanged;
   final ValueChanged<Duration>? onChangeEnd;
 
-   const SeekBar({
+  const SeekBar({
     Key? key,
     required this.duration,
     required this.position,
@@ -55,7 +54,8 @@ class SeekBarState extends State<SeekBar> {
                   child: Slider(
                     min: 0.0,
                     max: widget.duration.inMilliseconds.toDouble(),
-                    value: min(widget.bufferedPosition.inMilliseconds.toDouble(),
+                    value: min(
+                        widget.bufferedPosition.inMilliseconds.toDouble(),
                         widget.duration.inMilliseconds.toDouble()),
                     activeColor: widget.textColor,
                     inactiveColor: widget.textColor,
@@ -65,12 +65,14 @@ class SeekBarState extends State<SeekBar> {
                         _dragValue = value;
                       });
                       if (widget.onChanged != null) {
-                        widget.onChanged!(Duration(milliseconds: value.round()));
+                        widget
+                            .onChanged!(Duration(milliseconds: value.round()));
                       }
                     },
                     onChangeEnd: (value) {
                       if (widget.onChangeEnd != null) {
-                        widget.onChangeEnd!(Duration(milliseconds: value.round()));
+                        widget.onChangeEnd!(
+                            Duration(milliseconds: value.round()));
                       }
                       _dragValue = null;
                     },
@@ -81,12 +83,14 @@ class SeekBarState extends State<SeekBar> {
                 data: _sliderThemeData.copyWith(
                   inactiveTrackColor: Colors.transparent,
                   trackHeight: 0.5,
-                  thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6.0),
+                  thumbShape:
+                      const RoundSliderThumbShape(enabledThumbRadius: 6.0),
                 ),
                 child: Slider(
                   min: 0.0,
                   max: widget.duration.inMilliseconds.toDouble(),
-                  value: min(_dragValue ?? widget.position.inMilliseconds.toDouble(),
+                  value: min(
+                      _dragValue ?? widget.position.inMilliseconds.toDouble(),
                       widget.duration.inMilliseconds.toDouble()),
                   activeColor: widget.textColor,
                   inactiveColor: widget.textColor,
@@ -101,7 +105,8 @@ class SeekBarState extends State<SeekBar> {
                   },
                   onChangeEnd: (value) {
                     if (widget.onChangeEnd != null) {
-                      widget.onChangeEnd!(Duration(milliseconds: value.round()));
+                      widget
+                          .onChangeEnd!(Duration(milliseconds: value.round()));
                     }
                     _dragValue = null;
                   },
@@ -113,8 +118,14 @@ class SeekBarState extends State<SeekBar> {
         SizedBox(
           width: 40.0,
           child: Text(
-              RegExp(r'((^0*[1-9]\d*:)?\d{2}:\d{2})\.\d+$').firstMatch("$_remaining")?.group(1) ?? '$_remaining',
-              style: Theme.of(context).textTheme.caption!.copyWith(color: widget.textColor)),
+              RegExp(r'((^0*[1-9]\d*:)?\d{2}:\d{2})\.\d+$')
+                      .firstMatch("$_remaining")
+                      ?.group(1) ??
+                  '$_remaining',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: widget.textColor)),
         ),
       ],
     );

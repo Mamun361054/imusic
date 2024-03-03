@@ -1,7 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dhak_dhol/data/model/media_model.dart';
-import 'package:dhak_dhol/provider/music/music_provider.dart';
-import 'package:dhak_dhol/screens/home/music_player_page/music_player_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +17,8 @@ class PopularContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Provider.of<AudioProvider>(context, listen: false).preparePlaylist(mediaList!, popular!,index);
+        Provider.of<AudioProvider>(context, listen: false)
+            .preparePlaylist(mediaList!, popular!, index);
         Navigator.of(context).pushNamed(AudioPlayerNewPage.routeName);
       },
       child: Padding(

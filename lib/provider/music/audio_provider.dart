@@ -25,6 +25,7 @@ EventBus eventBus = EventBus();
 final Logger _logger = Logger('stream_flutter');
 
 class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
+  // ignore: unused_field
   late BuildContext _context;
   TextEditingController opinionTitleController = TextEditingController();
   TextEditingController opinionDescriptionController = TextEditingController();
@@ -56,7 +57,6 @@ class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
   static const String skipPreviousButtonId = 'skipPreviousButtonId';
   static const String skipNextButtonId = 'skipNextButtonId';
 
-
   List<AudioPlayer> audioPlayerList = [];
 
   AudioProvider() {
@@ -69,7 +69,7 @@ class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
   }
 
   void generate() async {
-    List.generate(currentPlaylist.length, (index){
+    List.generate(currentPlaylist.length, (index) {
       audioPlayerList.add(AudioPlayer());
     });
   }
@@ -176,7 +176,8 @@ class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
           // Metadata to display in the notification:
           album: '${media.album}',
           title: '${media.title}',
-          artUri: Uri.parse('${media.coverPhoto}',
+          artUri: Uri.parse(
+            '${media.coverPhoto}',
           ),
         ),
       ));
@@ -184,7 +185,8 @@ class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
 
     generate();
 
-    _audioSource = audioSourceList[currentMediaPosition] as LockCachingAudioSource;
+    _audioSource =
+        audioSourceList[currentMediaPosition] as LockCachingAudioSource;
 
     startAudioPlayBack(media);
   }
@@ -247,22 +249,21 @@ class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
       ),
     );
 
-    
     File file = File(media.streamUrl!);
 
+    // ignore: unused_local_variable
     bool isExists = await file.exists();
-
 
     await player.dispose();
     player = audioPlayerList[currentMediaPosition];
     player = AudioPlayer();
 
-    
     ///ConcatenatingAudioSource in player so media will play in a
     ///sequence into audio player as well as notification system tray
     if (media.streamUrl != null) {
       media.streamUrl!.startsWith('http')
-          ? await player.setAudioSource(ConcatenatingAudioSource(children: audioSourceList),
+          ? await player.setAudioSource(
+              ConcatenatingAudioSource(children: audioSourceList),
               initialIndex: currentMediaPosition)
           : await player.setUrl('file://${media.streamUrl}',
               initialPosition: Duration.zero, preload: true);
@@ -562,9 +563,9 @@ class AudioProvider extends ChangeNotifier with WidgetsBindingObserver {
   }
 
   void getOpinions({required Media media}) async {
-      opinions = [];
-      opinions = await Repository().getAllOpinionBySong(id: media.id??0);
-      notifyListeners();
+    opinions = [];
+    opinions = await Repository().getAllOpinionBySong(id: media.id ?? 0);
+    notifyListeners();
   }
 }
 

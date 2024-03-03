@@ -1,10 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../data/Repository/repositor.dart';
 import '../data/model/comment.dart';
-import '../utils/Utility.dart';
 import '../utils/Alerts.dart';
 import 'dart:convert';
 import 'dart:async';
@@ -252,6 +250,7 @@ class CommentsModel with ChangeNotifier {
   Future<void> deleteComment(int commentId, int position) async {
     Alerts.showProgressDialog(_context, 'Deleting comment');
     try {
+      // ignore: unused_local_variable
       final data = FormData.fromMap({"id": commentId, "media": media});
 
       final response = await repository.deleteComment(commentId);
@@ -337,7 +336,6 @@ class CommentsModel with ChangeNotifier {
       final response = await repository.editComment(data, commentId);
 
       if (response != null) {
-
         String status = response.data["status"];
         if (status == "success") {
           Navigator.of(_context).pop();

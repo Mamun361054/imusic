@@ -99,6 +99,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final userData = context.watch<ProfileProvider>();
 
     SharedPref.getValue(SharedPref.keyId).then((uid) {
@@ -144,6 +145,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
       final map = json.decode(payload);
 
+      // ignore: unused_local_variable
       NotificationDataModel notificationData =
           NotificationDataModel.fromJson(map);
     }

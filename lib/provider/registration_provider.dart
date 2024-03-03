@@ -1,6 +1,4 @@
 import 'package:dhak_dhol/data/Repository/repositor.dart';
-import 'package:dhak_dhol/data/firebase_service/firebase_service.dart';
-import 'package:dhak_dhol/screens/auth/sign_in/sign_in_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -53,7 +51,8 @@ class RegistrationProvider extends ChangeNotifier {
         //       builder: (context) => SignInScreen(),
         //     ));
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => const BottomNavigationScreen()),
+            MaterialPageRoute(
+                builder: (context) => const BottomNavigationScreen()),
             (Route<dynamic> route) => false);
       } else {
         Fluttertoast.showToast(
@@ -94,7 +93,8 @@ class RegistrationProvider extends ChangeNotifier {
     await SharedPref.setValue(SharedPref.keyName, response.user?.name);
     await SharedPref.setValue(SharedPref.keyEmail, response.user?.email);
     await SharedPref.setValue(SharedPref.keyToken, response.user?.token);
-    await SharedPref.setValue(SharedPref.keyProfileImage, response.user?.thumbnail);
+    await SharedPref.setValue(
+        SharedPref.keyProfileImage, response.user?.thumbnail);
     notifyListeners();
   }
 }

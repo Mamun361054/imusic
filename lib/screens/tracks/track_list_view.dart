@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import '../../data/model/media_model.dart';
 import '../../provider/tracks_provider.dart';
 import '../../utils/TextStyles.dart';
 import '../../utils/app_const.dart';
 import '../../widgets/mediaItemTile.dart';
 
 class MediaListView extends StatelessWidget {
-
   const MediaListView(this.header, this.subHeader, {super.key});
 
   final String header;
@@ -17,7 +15,6 @@ class MediaListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ChangeNotifierProvider(
       create: (_) => TracksProvider(),
       child: Scaffold(
@@ -43,7 +40,6 @@ class MediaListPage extends StatefulWidget {
 }
 
 class _MediaListPageState extends State<MediaListPage> {
-
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds: 0), () {
@@ -54,7 +50,6 @@ class _MediaListPageState extends State<MediaListPage> {
 
   @override
   Widget build(BuildContext context) {
-
     final tracksProvider = Provider.of<TracksProvider>(context);
 
     return SmartRefresher(
@@ -104,4 +99,3 @@ class _MediaListPageState extends State<MediaListPage> {
     );
   }
 }
-

@@ -101,13 +101,14 @@ class _ChatRoomState extends State<ChatRoom> {
                         shrinkWrap: true,
                         itemCount: snapshot.data?.length,
                         itemBuilder: (context, index) {
-                          if (userIdSnapshot.data != snapshot.data?.elementAt(index).uid) {
-
+                          if (userIdSnapshot.data !=
+                              snapshot.data?.elementAt(index).uid) {
                             final toLastChat = snapshot.data?.elementAt(index);
 
                             String? chatUser =
                                 snapshot.data?.elementAt(index).uid;
 
+                            // ignore: unused_local_variable
                             String? lastMessage =
                                 snapshot.data?.elementAt(index).message;
 
@@ -133,7 +134,11 @@ class _ChatRoomState extends State<ChatRoom> {
                                             Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                    builder: (context) => ChatConversation(friend: profile,lastChat: toLastChat,)));
+                                                    builder: (context) =>
+                                                        ChatConversation(
+                                                          friend: profile,
+                                                          lastChat: toLastChat,
+                                                        )));
                                           },
                                           child: Padding(
                                             padding: const EdgeInsets.only(
@@ -221,7 +226,11 @@ class _ChatRoomState extends State<ChatRoom> {
                                                                   .toList(),
                                                             )
                                                           else
-                                                            Text('', style: TextStyle(fontSize: 12,),
+                                                            Text(
+                                                              '',
+                                                              style: TextStyle(
+                                                                fontSize: 12,
+                                                              ),
                                                             )
                                                         ],
                                                       ),
@@ -233,21 +242,33 @@ class _ChatRoomState extends State<ChatRoom> {
                                                             width: 40.0,
                                                           ),
                                                           Visibility(
-                                                            visible: toLastChat?.fromUnseenCount != 0,
+                                                            visible: toLastChat
+                                                                    ?.fromUnseenCount !=
+                                                                0,
                                                             child: Positioned(
                                                               top: 0.0,
                                                               right: 0.0,
                                                               child: Container(
-                                                                alignment: Alignment.center,
-                                                                decoration: BoxDecoration(
-                                                                  color: Colors.red,
-                                                                  shape: BoxShape.circle,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: Colors
+                                                                      .red,
+                                                                  shape: BoxShape
+                                                                      .circle,
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsets.all(4.0),
+                                                                  padding:
+                                                                      const EdgeInsets
+                                                                          .all(
+                                                                          4.0),
                                                                   child: Text(
                                                                     '${toLastChat?.fromUnseenCount}',
-                                                                    style: TextStyle(color: Colors.white),
+                                                                    style: TextStyle(
+                                                                        color: Colors
+                                                                            .white),
                                                                   ),
                                                                 ),
                                                               ),

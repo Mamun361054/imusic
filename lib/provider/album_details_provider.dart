@@ -1,8 +1,6 @@
 import 'package:dhak_dhol/data/Repository/repositor.dart';
 import 'package:dhak_dhol/data/model/album_model.dart';
 import 'package:dhak_dhol/data/model/media_model.dart';
-import 'package:dhak_dhol/utils/shared_pref.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 

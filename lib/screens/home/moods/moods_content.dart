@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dhak_dhol/data/model/moods_model.dart';
-import 'package:dhak_dhol/screens/home/moods/mood_details/mood_details_screen.dart';
 import 'package:dhak_dhol/screens/home/moods/moods_media_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,9 @@ class MoodsContent extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) =>  MoodMediaScreen(moods: moods,),
+              builder: (context) => MoodMediaScreen(
+                moods: moods,
+              ),
             ));
       },
       child: Padding(
@@ -41,7 +42,9 @@ class MoodsContent extends StatelessWidget {
                 child: Container(
                   height: 35,
                   decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(10.0),bottomRight:Radius.circular(10.0)),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0)),
                     gradient: LinearGradient(
                         colors: [
                           Color(0xFF300040),
